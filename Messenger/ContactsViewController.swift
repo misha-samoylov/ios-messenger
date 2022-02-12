@@ -29,6 +29,7 @@ class ContactsViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
+        // Заполняем модель
         initUsers()
     }
 }

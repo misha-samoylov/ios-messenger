@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let iconSettings = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gearshape"), selectedImage: UIImage(systemName: "gearshape.fill"))
         
         let contactsVC = ContactsViewController()
+        let settingsVC = SettingsViewController()
         
         let navContacts = UINavigationController()
         navContacts.viewControllers = [contactsVC]
@@ -37,10 +38,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let chatVC = ChatViewController()
         chatVC.tabBarItem = iconChat
         
-        let settingsVC = SettingsViewController()
-        settingsVC.tabBarItem = iconSettings
-
-        tabBarController.viewControllers = [navContacts, chatVC, settingsVC]
+        let navSettings = UINavigationController()
+        navSettings.viewControllers = [settingsVC]
+        navSettings.tabBarItem = iconSettings
+        
+        tabBarController.viewControllers = [navContacts, chatVC, navSettings]
         
         window.rootViewController = tabBarController
         self.window = window
