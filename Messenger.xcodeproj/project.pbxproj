@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F5916DA127B6B61800B69572 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5916DA027B6B61800B69572 /* UserModel.swift */; };
+		F5942B4227B7D7E50029781B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5942B4127B7D7E50029781B /* StartViewController.swift */; };
+		F5942B4427B7E3B30029781B /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5942B4327B7E3B30029781B /* TabViewController.swift */; };
+		F5942B4827B7E5C80029781B /* AppGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5942B4727B7E5C80029781B /* AppGlobal.swift */; };
 		F5EEC6BA27B56A2400149150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEC6B927B56A2400149150 /* AppDelegate.swift */; };
 		F5EEC6BC27B56A2400149150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEC6BB27B56A2400149150 /* SceneDelegate.swift */; };
 		F5EEC6C327B56A2800149150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EEC6C227B56A2800149150 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		F5916DA027B6B61800B69572 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		F5942B4127B7D7E50029781B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		F5942B4327B7E3B30029781B /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		F5942B4727B7E5C80029781B /* AppGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobal.swift; sourceTree = "<group>"; };
 		F5EEC6B627B56A2400149150 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EEC6B927B56A2400149150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5EEC6BB27B56A2400149150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +47,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5942B4527B7E4F80029781B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5916DA027B6B61800B69572 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F5942B4627B7E5050029781B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5942B4327B7E3B30029781B /* TabViewController.swift */,
+				F5EEC6CD27B56A7600149150 /* ContactsViewController.swift */,
+				F5EEC6CF27B56CAC00149150 /* ChatViewController.swift */,
+				F5EEC6D127B56D4B00149150 /* SettingsViewController.swift */,
+				F5942B4127B7D7E50029781B /* StartViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		F5EEC6AD27B56A2400149150 = {
 			isa = PBXGroup;
 			children = (
@@ -65,10 +91,9 @@
 				F5EEC6C227B56A2800149150 /* Assets.xcassets */,
 				F5EEC6C427B56A2800149150 /* LaunchScreen.storyboard */,
 				F5EEC6C727B56A2800149150 /* Info.plist */,
-				F5EEC6CD27B56A7600149150 /* ContactsViewController.swift */,
-				F5EEC6CF27B56CAC00149150 /* ChatViewController.swift */,
-				F5EEC6D127B56D4B00149150 /* SettingsViewController.swift */,
-				F5916DA027B6B61800B69572 /* UserModel.swift */,
+				F5942B4727B7E5C80029781B /* AppGlobal.swift */,
+				F5942B4627B7E5050029781B /* Controllers */,
+				F5942B4527B7E4F80029781B /* Models */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -143,9 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5942B4427B7E3B30029781B /* TabViewController.swift in Sources */,
 				F5EEC6CE27B56A7600149150 /* ContactsViewController.swift in Sources */,
+				F5942B4227B7D7E50029781B /* StartViewController.swift in Sources */,
 				F5EEC6BA27B56A2400149150 /* AppDelegate.swift in Sources */,
 				F5EEC6D027B56CAC00149150 /* ChatViewController.swift in Sources */,
+				F5942B4827B7E5C80029781B /* AppGlobal.swift in Sources */,
 				F5EEC6D227B56D4B00149150 /* SettingsViewController.swift in Sources */,
 				F5916DA127B6B61800B69572 /* UserModel.swift in Sources */,
 				F5EEC6BC27B56A2400149150 /* SceneDelegate.swift in Sources */,

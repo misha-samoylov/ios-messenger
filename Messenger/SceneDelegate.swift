@@ -20,31 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: wndScene)
         
-        let tabBarController = UITabBarController()
+        // Проверка был ли показан начальный экран
+        if UserDefaults.standard.bool(forKey: USERDEFAULT_SHOWED_START) == false {
+            window.rootViewController = StartViewController()
+        } else {
+            window.rootViewController = TabViewController()
+        }
         
-        let iconContacts = UITabBarItem(title: "Контакты", image: UIImage(systemName: "person.2"), selectedImage: UIImage(systemName: "person.2.fill"))
-        
-        let iconChat = UITabBarItem(title: "Сообщения", image: UIImage(systemName: "message"), selectedImage: UIImage(systemName: "message.fill"))
-        
-        let iconSettings = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gearshape"), selectedImage: UIImage(systemName: "gearshape.fill"))
-        
-        let contactsVC = ContactsViewController()
-        let settingsVC = SettingsViewController()
-        
-        let navContacts = UINavigationController()
-        navContacts.viewControllers = [contactsVC]
-        navContacts.tabBarItem = iconContacts        
-        
-        let chatVC = ChatViewController()
-        chatVC.tabBarItem = iconChat
-        
-        let navSettings = UINavigationController()
-        navSettings.viewControllers = [settingsVC]
-        navSettings.tabBarItem = iconSettings
-        
-        tabBarController.viewControllers = [navContacts, chatVC, navSettings]
-        
-        window.rootViewController = tabBarController
         self.window = window
         
         window.makeKeyAndVisible()
