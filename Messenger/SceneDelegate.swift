@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Проверка был ли показан начальный экран
         if UserDefaults.standard.bool(forKey: USERDEFAULT_SHOWED_START) == false {
-            window.rootViewController = StartViewController()
+            window.rootViewController = StartPageViewController()
         } else {
             window.rootViewController = TabViewController()
         }
