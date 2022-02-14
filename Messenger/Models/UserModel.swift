@@ -18,11 +18,12 @@ struct User {
     var gender: Gender
 }
 
-var users: [User] = []
+// Доступ только в этом исходном файле
+fileprivate var users: [User] = []
 
 func initUsers() -> Void {
     users.removeAll()
-    
+
     users.append(User(name: "Максим", surname: "Степанов", gender: .male))
     users.append(User(name: "Ева", surname: "Козловская", gender: .female))
     users.append(User(name: "Алексей", surname: "Павлов", gender: .male))
@@ -30,4 +31,8 @@ func initUsers() -> Void {
     users.append(User(name: "Александра", surname: "Галкина", gender: .female))
     users.append(User(name: "Дарья", surname: "Коновалова", gender: .female))
     users.append(User(name: "Полина", surname: "Громова", gender: .female))
+}
+
+func getUsers() -> [User] {
+    return users
 }

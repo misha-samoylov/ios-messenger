@@ -13,9 +13,7 @@ class TabViewController: UITabBarController {
         super.viewDidLoad()
 
         let iconContacts = UITabBarItem(title: "Контакты", image: UIImage(systemName: "person.2"), selectedImage: UIImage(systemName: "person.2.fill"))
-        
         let iconChat = UITabBarItem(title: "Сообщения", image: UIImage(systemName: "message"), selectedImage: UIImage(systemName: "message.fill"))
-        
         let iconSettings = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gearshape"), selectedImage: UIImage(systemName: "gearshape.fill"))
         
         let contactsVC = ContactsViewController()

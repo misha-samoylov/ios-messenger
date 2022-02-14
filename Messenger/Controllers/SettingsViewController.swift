@@ -9,8 +9,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    var tableView = UITableView()
-    var menu: [String] = []
+    private var tableView = UITableView()
+    private var menu: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

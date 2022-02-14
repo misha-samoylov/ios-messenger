@@ -9,7 +9,7 @@ import UIKit
 
 class ContactsViewController: UIViewController {
 
-    let tableView = UITableView()
+    private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +39,16 @@ class ContactsViewController: UIViewController {
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(users[indexPath.row].name) \(users[indexPath.row].surname)"
+        
+        let users = getUsers()
+        let name = users[indexPath.row].name
+        let surname = users[indexPath.row].surname
+        
+        cell.textLabel?.text = "\(name) \(surname)"
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return getUsers().count
     }
 }

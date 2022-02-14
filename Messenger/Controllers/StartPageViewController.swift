@@ -9,7 +9,7 @@ import UIKit
 
 class StartPageViewController: UIPageViewController {
     
-    var pages: [UIViewController] = []
+    private var pages: [UIViewController] = []
     
     // Переназначаем метод чтобы указать стиль создания UIPageViewController
     override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
@@ -25,13 +25,8 @@ class StartPageViewController: UIPageViewController {
         
         self.view.backgroundColor = UIColor.systemBackground
 
+        // Создаем изображения
         let images = ["start-a", "start-b", "start-c"]
-        
-        // Настройка цвета индикатора страниц
-        let proxy = UIPageControl.appearance()
-        proxy.pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.3)
-        proxy.currentPageIndicatorTintColor = UIColor.black
-
         var imageViews: [UIImageView] = []
         
         for index in 0..<3 {
@@ -44,16 +39,19 @@ class StartPageViewController: UIPageViewController {
             imageViews.append(imageView)
         }
         
+        // Создаем экраны и добавляем туда изображения
         for index in 0..<3 {
             let vc = UIViewController()
             pages.append(vc)
             pages[index].view.addSubview(imageViews[index])
         }
         
+        // Добавляем кнопку на последний экран
         let lastVC = pages[pages.count - 1]
         let button = UIButton(type: .system)
         lastVC.view.addSubview(button)
         
+        // Настройка кнопки
         button.setTitle("Далее", for: .normal)
         button.addTarget(self, action: #selector(buttonNext), for: .touchDown)
         button.bottomAnchor.constraint(equalTo: lastVC.view.safeAreaLayoutGuide.bottomAnchor, constant: -40).isActive = true
@@ -62,12 +60,21 @@ class StartPageViewController: UIPageViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         // Настройка UIPageViewController
-        dataSource = self
-        delegate = self
-        setViewControllers([pages[0]], direction: .forward, animated: false, completion: nil)
+        self.dataSource = self
+        self.delegate = self
+        self.setViewControllers([pages[0]], direction: .forward, animated: false, completion: nil)
+        
+        // Настройка цвета индикатора страниц
+        let proxy = UIPageControl.appearance()
+        proxy.pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.3)
+        proxy.currentPageIndicatorTintColor = UIColor.black
     }
     
-    @objc func buttonNext() {
+    @objc private func buttonNext() {
+        // Устанавливаем что просмотрели вводный тур
+        UserDefaults.standard.set(true, forKey: USERDEFAULT_SHOWED_START)
+        
+        // Показ главного экрана
         let mainVC = TabViewController()
         mainVC.modalPresentationStyle = .fullScreen
         present(mainVC, animated: true, completion: nil)
