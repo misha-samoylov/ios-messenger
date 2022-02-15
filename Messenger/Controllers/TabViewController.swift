@@ -18,18 +18,20 @@ class TabViewController: UITabBarController {
         
         let contactsVC = ContactsViewController()
         let settingsVC = SettingsViewController()
+        let chatVC = ChatViewController()
         
         let navContacts = UINavigationController()
         navContacts.viewControllers = [contactsVC]
         navContacts.tabBarItem = iconContacts
         
-        let chatVC = ChatViewController()
-        chatVC.tabBarItem = iconChat
+        let navChat = UINavigationController()
+        navChat.viewControllers = [chatVC]
+        navChat.tabBarItem = iconChat
         
         let navSettings = UINavigationController()
         navSettings.viewControllers = [settingsVC]
         navSettings.tabBarItem = iconSettings
         
-        self.viewControllers = [navContacts, chatVC, navSettings]
+        self.viewControllers = [navContacts, navChat, navSettings]
     }
 }
