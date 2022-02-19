@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F5916DA127B6B61800B69572 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5916DA027B6B61800B69572 /* UserModel.swift */; };
+		F5916DA127B6B61800B69572 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5916DA027B6B61800B69572 /* ContactModel.swift */; };
 		F5942B4427B7E3B30029781B /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5942B4327B7E3B30029781B /* TabViewController.swift */; };
 		F5942B4827B7E5C80029781B /* AppGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5942B4727B7E5C80029781B /* AppGlobal.swift */; };
 		F59DA41327B91F130063A2AC /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59DA41227B91F130063A2AC /* StartPageViewController.swift */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F5916DA027B6B61800B69572 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		F5916DA027B6B61800B69572 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		F5942B4327B7E3B30029781B /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		F5942B4727B7E5C80029781B /* AppGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobal.swift; sourceTree = "<group>"; };
 		F59DA41227B91F130063A2AC /* StartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		F5942B4527B7E4F80029781B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F5916DA027B6B61800B69572 /* UserModel.swift */,
+				F5916DA027B6B61800B69572 /* ContactModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -74,6 +74,7 @@
 			children = (
 				F5EEC6B827B56A2400149150 /* Messenger */,
 				F5EEC6B727B56A2400149150 /* Products */,
+				F766E6CBDC06B9A0604CAAD9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +100,13 @@
 				F5CA6DF127BBD2A400E10242 /* GroupTableCell.swift */,
 			);
 			path = Messenger;
+			sourceTree = "<group>";
+		};
+		F766E6CBDC06B9A0604CAAD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +186,7 @@
 				F5EEC6D027B56CAC00149150 /* ChatViewController.swift in Sources */,
 				F5942B4827B7E5C80029781B /* AppGlobal.swift in Sources */,
 				F5EEC6D227B56D4B00149150 /* SettingsViewController.swift in Sources */,
-				F5916DA127B6B61800B69572 /* UserModel.swift in Sources */,
+				F5916DA127B6B61800B69572 /* ContactModel.swift in Sources */,
 				F5CA6DF227BBD2A400E10242 /* GroupTableCell.swift in Sources */,
 				F5EEC6BC27B56A2400149150 /* SceneDelegate.swift in Sources */,
 			);

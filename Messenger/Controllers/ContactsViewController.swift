@@ -29,18 +29,20 @@ class ContactsViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        // Заполняем модель
-        initUsers()
+        // Очищаем контакты чтобы каждый раз не добавлялись одинаковые данные
+        clearAllContacts()
+        
+        // Заполняем контакты
+        initContacts()
     }
 }
 
-// Используем расширение чтобы добавить в базовый
-// класс новые наследники для настройки таблицы
+// Используем расширение чтобы добавить в базовый класс новые наследники (и настраиваем таблицу)
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let users = getUsers()
+        let users = getContacts()
         let name = users[indexPath.row].name
         let surname = users[indexPath.row].surname
         
@@ -49,6 +51,6 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return getUsers().count
+        return getContactsCount()
     }
 }
