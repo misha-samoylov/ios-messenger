@@ -7,4 +7,5 @@ target 'Messenger' do
 
   # Pods for Messenger
   pod 'RealmSwift'
+  pod 'Alamofire', '~> 5.5'
 end

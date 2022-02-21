@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import Alamofire
+
+struct DummyData: Decodable {
+    let userId: Int //    1
+    let id: Int //    1
+    let title: String //    "delectus aut autem"
+    let completed: Bool //    false
+}
 
 class ChatViewController: UIViewController {
     
     private let tableView = UITableView()
+    private var responseQ: [DummyData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +40,26 @@ class ChatViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        AF.request("https://jsonplaceholder.typicode.com/todos").responseDecodable(of: [DummyData].self) { (response) in
+            switch response.result {
+                case .success(let value):
+                    
+                for element in value {
+                    self.responseQ.append(element)
+                    self.tableView.reloadData()
+                }
+
+                case .failure(let error):
+                    print(error)
+            }
+        }
     }
 }
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.responseQ.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,9 +73,15 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "thirdStyle", for: indexPath)
-            cell.textLabel?.text = "Third text"
+            // cell.textLabel?.text = "Third text"
+            cell.textLabel?.text = self.responseQ[indexPath.row].title
             return cell
         }
         
+    }
+    
+    /* Решение проблемы с constraints высотой ячейки */
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
     }
 }
