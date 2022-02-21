@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 // Объявляем модель Realm
-class Contact: Object {
+class ContactModel: Object {
     @objc dynamic var name = ""
     @objc dynamic var surname = ""
     @objc dynamic var isMale = true
@@ -20,16 +20,16 @@ fileprivate let realm = try! Realm()
 
 // Заполняем данными модель и записываем в БД Realm
 func initContacts() {
-    var contacts: [Contact] = []
+    var contacts: [ContactModel] = []
     
-    contacts.append(Contact(value: ["name": "Максим", "surname": "Степанов", "isMale": true]))
-    contacts.append(Contact(value: ["name": "Ева", "surname": "Козловская", "isMale": false]))
-    contacts.append(Contact(value: ["name": "Алексей", "surname": "Павлов", "isMale": true]))
-    contacts.append(Contact(value: ["name": "Владимир", "surname": "Леонтьев", "isMale": true]))
+    contacts.append(ContactModel(value: ["name": "Максим", "surname": "Степанов", "isMale": true]))
+    contacts.append(ContactModel(value: ["name": "Ева", "surname": "Козловская", "isMale": false]))
+    contacts.append(ContactModel(value: ["name": "Алексей", "surname": "Павлов", "isMale": true]))
+    contacts.append(ContactModel(value: ["name": "Владимир", "surname": "Леонтьев", "isMale": true]))
     
-    contacts.append(Contact(value: ["name": "Александра", "surname": "Галкина", "isMale": false]))
-    contacts.append(Contact(value: ["name": "Дарья", "surname": "Коновалова", "isMale": false]))
-    contacts.append(Contact(value: ["name": "Полина", "surname": "Громова", "isMale": false]))
+    contacts.append(ContactModel(value: ["name": "Александра", "surname": "Галкина", "isMale": false]))
+    contacts.append(ContactModel(value: ["name": "Дарья", "surname": "Коновалова", "isMale": false]))
+    contacts.append(ContactModel(value: ["name": "Полина", "surname": "Громова", "isMale": false]))
     
     // Persist your data easily
     try! realm.write {
@@ -40,12 +40,12 @@ func initContacts() {
 }
 
 func getContactsCount() -> Int {
-    let results = realm.objects(Contact.self)
+    let results = realm.objects(ContactModel.self)
     return results.count
 }
 
-func getContacts() -> [Contact] {
-    let results = realm.objects(Contact.self).sorted(byKeyPath: "name")
+func getContacts() -> [ContactModel] {
+    let results = realm.objects(ContactModel.self).sorted(byKeyPath: "name")
     
     // Переводим результат в обычный массив Swift
     let array = Array(results)

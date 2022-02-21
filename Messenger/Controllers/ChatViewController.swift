@@ -8,17 +8,10 @@
 import UIKit
 import Alamofire
 
-struct DummyData: Decodable {
-    let userId: Int //    1
-    let id: Int //    1
-    let title: String //    "delectus aut autem"
-    let completed: Bool //    false
-}
-
 class ChatViewController: UIViewController {
     
     private let tableView = UITableView()
-    private var responseQ: [DummyData] = []
+    private var responseQ: [InfoModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +34,7 @@ class ChatViewController: UIViewController {
         tableView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        AF.request("https://jsonplaceholder.typicode.com/todos").responseDecodable(of: [DummyData].self) { (response) in
+        AF.request("https://jsonplaceholder.typicode.com/todos").responseDecodable(of: [InfoModel].self) { (response) in
             switch response.result {
                 case .success(let value):
                     
@@ -77,7 +70,11 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = self.responseQ[indexPath.row].title
             return cell
         }
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DialogViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     /* Решение проблемы с constraints высотой ячейки */

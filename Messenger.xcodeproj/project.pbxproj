@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F540112327C3C98C00B4E642 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F540112227C3C98C00B4E642 /* DialogViewController.swift */; };
+		F540112527C3CA5800B4E642 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F540112427C3CA5800B4E642 /* InfoModel.swift */; };
 		F5916DA127B6B61800B69572 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5916DA027B6B61800B69572 /* ContactModel.swift */; };
 		F5942B4427B7E3B30029781B /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5942B4327B7E3B30029781B /* TabViewController.swift */; };
 		F5942B4827B7E5C80029781B /* AppGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5942B4727B7E5C80029781B /* AppGlobal.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F540112227C3C98C00B4E642 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		F540112427C3CA5800B4E642 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		F5916DA027B6B61800B69572 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		F5942B4327B7E3B30029781B /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		F5942B4727B7E5C80029781B /* AppGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobal.swift; sourceTree = "<group>"; };
@@ -53,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				F5916DA027B6B61800B69572 /* ContactModel.swift */,
+				F540112427C3CA5800B4E642 /* InfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -65,6 +70,7 @@
 				F5EEC6CF27B56CAC00149150 /* ChatViewController.swift */,
 				F5EEC6D127B56D4B00149150 /* SettingsViewController.swift */,
 				F59DA41227B91F130063A2AC /* StartPageViewController.swift */,
+				F540112227C3C98C00B4E642 /* DialogViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,10 +191,12 @@
 				F5EEC6BA27B56A2400149150 /* AppDelegate.swift in Sources */,
 				F5EEC6D027B56CAC00149150 /* ChatViewController.swift in Sources */,
 				F5942B4827B7E5C80029781B /* AppGlobal.swift in Sources */,
+				F540112327C3C98C00B4E642 /* DialogViewController.swift in Sources */,
 				F5EEC6D227B56D4B00149150 /* SettingsViewController.swift in Sources */,
 				F5916DA127B6B61800B69572 /* ContactModel.swift in Sources */,
 				F5CA6DF227BBD2A400E10242 /* GroupTableCell.swift in Sources */,
 				F5EEC6BC27B56A2400149150 /* SceneDelegate.swift in Sources */,
+				F540112527C3CA5800B4E642 /* InfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
