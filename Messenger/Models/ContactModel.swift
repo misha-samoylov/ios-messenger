@@ -31,7 +31,7 @@ func initContacts() {
     contacts.append(ContactModel(value: ["name": "Дарья", "surname": "Коновалова", "isMale": false]))
     contacts.append(ContactModel(value: ["name": "Полина", "surname": "Громова", "isMale": false]))
     
-    // Persist your data easily
+    // Заполняем БД Realm
     try! realm.write {
         for contact in contacts {
             realm.add(contact)
@@ -47,7 +47,7 @@ func getContactsCount() -> Int {
 func getContacts() -> [ContactModel] {
     let results = realm.objects(ContactModel.self).sorted(byKeyPath: "name")
     
-    // Переводим результат в обычный массив Swift
+    // Переводим результат из БД в обычный массив Swift
     let array = Array(results)
     return array
 }

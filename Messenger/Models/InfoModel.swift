@@ -8,8 +8,8 @@
 import Foundation
 
 struct InfoModel: Decodable {
-    let userId: Int //    1
-    let id: Int //    1
-    let title: String //    "delectus aut autem"
-    let completed: Bool //    false
+    let userId: Int
+    let id: Int
+    let title: String
+    let completed: Bool
 }
